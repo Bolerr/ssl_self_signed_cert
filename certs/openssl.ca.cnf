@@ -1,0 +1,22 @@
+[ req ]
+prompt = no
+default_bits = 4096
+default_md = sha512
+string_mask = utf8only
+distinguished_name = req_distinguished_name
+# Extension to add when the -x509 option is used.
+x509_extensions = v3_ca
+
+[ req_distinguished_name ]
+countryName                     = US
+stateOrProvinceName             = Nebraska
+localityName                    = Omaha
+organizationName                = Example Org
+organizationalUnitName          = IT Department
+commonName                      = Localhost CA
+
+[ v3_ca ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign

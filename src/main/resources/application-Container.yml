@@ -1,0 +1,13 @@
+logging:
+  level.org.springframework.security.*: INFO
+
+server:
+  port: ${SSL_PORT}
+  ssl:
+    enabled: true
+    key-store: ./localhost.p12
+    key-store-password: ${KEY_STORE_PASSWORD}
+    key-store-provider: SunJSSE
+    key-store-type: PKCS12
+    key-password: ${KEY_PASSWORD}
+    key-alias: localhost

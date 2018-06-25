@@ -1,0 +1,49 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: true
+    hibernate.ddl-auto: validate
+
+  datasource:
+    url: jdbc:h2:mem:mydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+    h2:
+      console:
+        path: /myconsole
+        enabled: true
+
+    initialize: true
+    schema: classpath:schema-h2.sql
+
+  ldap:
+    urls: 'ldap://server:389'
+    username: 'ldapUser'
+    password: 'ldapPassword'
+
+    embedded:
+      base-dn: 'dc=springframework,dc=org'
+      port: 8389
+      credential:
+        username: ''
+        password: ''
+      ldif: classpath:test-server.ldif
+
+logging:
+  level.org.springframework.security.*: DEBUG
+
+embeddedLdapEnabled: true
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: ./certs/generated/localhost.p12
+    key-store-password: keyStorePassword
+    key-store-provider: SunJSSE
+    key-store-type: PKCS12
+    key-password: keyStorePassword
+    key-alias: localhost

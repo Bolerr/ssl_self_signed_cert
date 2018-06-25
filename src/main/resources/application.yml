@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: 'Grants'
+    version: 1.0
+  aop:
+    auto: true
+    proxy-target-class: true
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    properties.jadira.usertype.autoRegisterUserTypes: true
+    properties.jadira.usertype.javaZone: jvm
+    properties.jadira.usertype.databaseZone: jvm
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+          ddl-auto: validate
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+      indent_output: true
+  profiles:
+    active: ${APP_ENV:Local}
+
+banner:
+  charset: UTF-8
+  image:
+    location: classpath:banner.jpg
+
+security:
+  user:
+    name: us3rNam3
+    password: pazzword
+    roles: ACTUATOR
+# The line below unsecures the application endpoints.
+# This should be removed from production profiles.
+  ignored: /**
+
+# Actuator endpoints are secured by default in Spring 1.5
+# The configuration below unsecures those endpoints.
+# This should be removed from production profiles.
+management:
+  security:
+    enabled: false
+
+
+swagger:
+  api-info:
+    title: 'Example Application'
+    desc: 'Example Application Data Service'
+    creator: ''
+    url-desc: 'API Documentation'
+    url: ''
