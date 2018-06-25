@@ -1,4 +1,4 @@
-#SSL Self Signed Cert Example Project
+SSL Self Signed Cert Example Project
 
 This was an example project to for a blog post to show how to get SSL working for a Spring Boot REST API application. 
 
