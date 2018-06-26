@@ -1,6 +1,6 @@
 spring:
   application:
-    name: 'Grants'
+    name: 'ssl_self_signed_cert_example'
     version: 1.0
   aop:
     auto: true
@@ -23,28 +23,6 @@ spring:
       indent_output: true
   profiles:
     active: ${APP_ENV:Local}
-
-banner:
-  charset: UTF-8
-  image:
-    location: classpath:banner.jpg
-
-security:
-  user:
-    name: us3rNam3
-    password: pazzword
-    roles: ACTUATOR
-# The line below unsecures the application endpoints.
-# This should be removed from production profiles.
-  ignored: /**
-
-# Actuator endpoints are secured by default in Spring 1.5
-# The configuration below unsecures those endpoints.
-# This should be removed from production profiles.
-management:
-  security:
-    enabled: false
-
 
 swagger:
   api-info:
