@@ -4,7 +4,7 @@ This was an example project to for a blog post to show how to get SSL working fo
 
 I created this project to help remind myself and hopefully spare others the frustration of an issue that we ran into when setting up SSL on a project.
 
-We developed a script that would generate a self signed p12 keystore for the application to use for local development and to test out our process before requesting the private files / certs we needed from the client to secure the application we were developing. This script: `generate_certificates.sh` an be found under the `/certs` directory in this project.
+We developed a script that would generate a self signed p12 keystore for the application to use for local development and to test out our process before requesting the private key / certificates we needed from the client to secure the application we were developing. This script: `generate_certificates.sh` an be found under the `/certs` directory in this project.
 
 Once we had created the keystore and verified the certs looked correct, we started up the application with the new keystore referenced in the application configuration.
 
